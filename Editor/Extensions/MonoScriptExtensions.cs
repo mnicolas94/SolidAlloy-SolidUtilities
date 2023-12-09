@@ -43,7 +43,7 @@
             catch (Exception e)
             {
                 // Whatever caused this exception, the type cannot be loaded, so disregard it as null.
-                if (e is FileNotFoundException || e is FileLoadException)
+                if (e is FileNotFoundException or FileLoadException or ArgumentException)
                     return null;
 
                 throw;
